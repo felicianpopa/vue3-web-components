@@ -1,6 +1,9 @@
-import './assets/main.css'
+import { defineCustomElement } from "vue";
+import Chat from "./chat-window.ce.vue";
+import SecondComponent from "./components/second-component.ce.vue";
 
-import { createApp } from 'vue'
-import App from './App.vue'
+const ChatWindow = defineCustomElement(Chat);
+const SecondComponentExport = defineCustomElement(SecondComponent);
 
-createApp(App).mount('#app')
+customElements.define("chat-window", ChatWindow);
+customElements.define("second-component", SecondComponentExport);
